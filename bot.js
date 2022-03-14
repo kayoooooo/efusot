@@ -16,6 +16,10 @@ const commands = {
 
 const insults = ["Kill yourself", "Go fuck yourself", "Fuck you", "Eat shit"];
 
+function sleep(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+ }
+
 const prefix = ".";
 client.on('messageCreate', (msg) => {
 	if (msg.author.bot && (msg.author.id == 235148962103951360)) {msg.reply(insults[Math.floor(Math.random() * insults.length)])};
@@ -25,9 +29,14 @@ client.on('messageCreate', (msg) => {
 	const userCmd = msg.content.slice(prefix.length).split()[0];
 	if (userCmd == "oigoig") {
 		msg.reply("775249");
+	}	
+	if (userCmd == "sus") {
+		//msgRef = msg.channel.send(":face_with_raised_eyebrow: :camera_with_flash:");
+		msg.channel.send(":face_with_raised_eyebrow: :camera_with_flash:").then((sentMessage) => {sleep(200); sentMessage.edit(":face_with_raised_eyebrow: :camera:")})
+		//sleep(100);
+		//msgRef.edit(":face_with_raised_eyebrow: :camera:");
 	}
 	/*
-	const userCmd = msg.content.slice(prefix.length).split()[0];
 	if (userCmd == "remind") {
 		const dailyTime = msg.content.slice(prefix.length).split()[1];
 	}*/
