@@ -1,5 +1,5 @@
 const { Client } = require('discord.js');
-import fs from "fs";
+const fs = require('fs');
 const { botIntents } = require('./config/config');
 const config = require('./config/default');
 const client = new Client({
@@ -54,8 +54,8 @@ client.on('messageCreate', (msg) => {
 				"prob" : params[2],
 				"time" : params[3]
 			}
-			data = JSON.stringify(inslt)
-			fs.writeFile("./insult.json", data)
+			data = JSON.stringify(inslt);
+			fs.writeFile("./insult.json", data);
 		}
 	}
 });

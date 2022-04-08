@@ -1,10 +1,9 @@
-FROM node:17.6.0
+FROM node:17.4.0
 
 WORKDIR /app
 
-COPY package.json /app
-COPY bot.js /app/bot.js
-COPY config /app/config
+COPY package.json ./
 RUN npm install
+COPY . .
 
 CMD [ "node", "bot.js" ]
