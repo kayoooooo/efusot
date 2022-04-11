@@ -39,7 +39,6 @@ client.on('messageCreate', (msg) => {
 	if (userCmd == "remind") {
 		const dailyTime = msg.content.slice(prefix.length).split()[1];
 	}*/
-	/*
 	if (userCmd == "insult") {
 		//takes in parameters user, probability, and time. Time is when insulting stops.
 		params = msg.content.slice(prefix.length).split();
@@ -58,6 +57,6 @@ client.on('messageCreate', (msg) => {
 			data = JSON.stringify(inslt);
 			fs.writeFile("./insult.json", data);
 		}
-	*/
+	}
 });
 client.login(config.DISCORD_TOKEN);
